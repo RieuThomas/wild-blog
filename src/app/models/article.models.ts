@@ -6,5 +6,7 @@ export interface Article {
     isPublished: boolean,
     likeCount: number,
     categoryName: string,
+    id: number,
+    isLiked: boolean,
 
 }

@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class App {
-  protected readonly title = signal('wild-blog');
+  protected readonly title = signal('Bienvenue sur le Wild Blog de Thomas !');
 }

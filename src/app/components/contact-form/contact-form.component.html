@@ -1,0 +1,69 @@
+<form #contactForm = "ngForm" (ngSubmit)="contactForm.valid && onSubmit()">
+    <fieldset>
+      <label for="lastname">Nom</label>
+      <input 
+        id="lastname" 
+        name="lastname" 
+        type="text" 
+        required 
+        minlength="2" 
+        maxlength="15" 
+        [(ngModel)]="newContact.lastname"
+        #lastname="ngModel">
+        @if (lastname.errors && contactForm.submitted) {
+            <div>
+                @if (lastname.errors['required']) {
+                <span>Le nom est requis</span>
+                }
+                @if (lastname.errors['minlength']) {
+                <span>Le nom doit comporter au moins 2 caractères.</span>
+                }
+            </div>
+        }
+    </fieldset>
+    <fieldset>
+      <label for="firstname">Prénom</label>
+      <input 
+        id="firstname" 
+        name="firstname" 
+        type="text" 
+        required 
+        minlength="2" 
+        maxlength="15" 
+        [(ngModel)]="newContact.firstname"
+        #firstname="ngModel"
+        >
+        @if (firstname.errors && contactForm.submitted) {
+            <div>
+                @if (firstname.errors['required']) {
+                <span>Le prénom est requis</span>
+                }
+                @if (firstname.errors['minlength']) {
+                <span>Le prénom doit comporter au moins 2 caractères.</span>
+                }
+            </div>
+        }
+    </fieldset>
+    <fieldset>
+      <label for="email">Contact</label>
+      <input 
+        id="email" 
+        name="email" 
+        type="email" 
+        required 
+        email 
+        [(ngModel)]="newContact.email"
+        #email="ngModel">
+        @if (email.errors && contactForm.submitted) {
+            <div>
+                @if (email.errors['required']) {
+                <span>L'email est requis</span>
+                }
+                @if (email.errors['email']) {
+                <span>L'email est invalide.</span>
+                }
+            </div>
+        }
+    </fieldset>
+    <button type="submit">Envoyer</button>
+</form>

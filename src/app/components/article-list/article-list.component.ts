@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { Article } from '../../models/article.models';
-import { DatePipe, NgClass } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ArticleThumbnail } from '../article-thumbnail/article-thumbnail.component';
 
 @Component({
   selector: 'app-article-list',
   standalone: true,
-  imports: [DatePipe, NgClass, RouterLink],
+  imports: [ArticleThumbnail],
   templateUrl: './article-list.component.html',
   styleUrl: './article-list.component.scss',
 })

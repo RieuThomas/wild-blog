@@ -1,20 +1,6 @@
 <section>
     @for(article of articles; track article.id) {
-        @if(article.isPublished){
-            <article [ngClass]="{'popular-article' : article.likeCount > 200}">
-                <div class="img-container">
-                    <img [src] = "article.image" [alt]="article.title">
-                    <p>{{ article.categoryName }}</p>
-                </div>              
-                <p class="date">{{ article.createdAt | date:'shortDate' }}</p>           
-                <h3>
-                    <a [routerLink]="['/article', article.id]">
-                        {{ article.title }}
-                    </a>
-                </h3>
-                <p>{{ article.content }}</p>
-            </article>
-        }
+        <app-article-thumbnail [article] = 'article'></app-article-thumbnail>
     }
 </section>
 

@@ -1,5 +1,5 @@
 <section>
-    @for(article of articles; track article.id) {
+    @for(article of articles$ | async; track article.id) {
         <app-article-thumbnail [article] = 'article' (isLikedChange)="article.isLiked = $event"></app-article-thumbnail>
     }
 </section>

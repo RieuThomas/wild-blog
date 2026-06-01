@@ -27,6 +27,5 @@ export class ArticleThumbnail {
 
   changeIsLiked() {
     this.isLikedChange.emit(!this.article.isLiked)
-    console.log(this.article.isLiked)
   }
 }

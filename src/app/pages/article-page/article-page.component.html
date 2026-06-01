@@ -1,1 +1,3 @@
-<p>je suis {{ articleId }}</p>
+@if(article$ |async; as article ){
+    <app-article-thumbnail [article] = 'article' (isLikedChange)="article.isLiked = $event"></app-article-thumbnail>
+}

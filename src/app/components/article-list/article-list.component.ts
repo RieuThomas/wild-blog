@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from '../../models/article.models';
-import { ArticleThumbnail } from '../article-thumbnail/article-thumbnail.component';
+import { ArticleThumbnail } from '../../article-thumbnail/article-thumbnail.component';
 
 @Component({
   selector: 'app-article-list',
@@ -186,6 +186,6 @@ export class ArticleList {
       isPublished: true,
       categoryName: 'Web',
       isLiked: false,
-    }
+    }    
 ];
 }

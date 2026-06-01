@@ -3,6 +3,7 @@
                 <div class="img-container">
                     <img [src] = "article.image" [alt]="article.title">
                     <p>{{ article.categoryName }}</p>
+                    <button class="isLiked" (click)="changeIsLiked()">{{article.isLiked ? "♥" :"♡"}}</button>
                 </div>              
                 <p class="date">{{ article.createdAt | date:'shortDate' }}</p>           
                 <h3>

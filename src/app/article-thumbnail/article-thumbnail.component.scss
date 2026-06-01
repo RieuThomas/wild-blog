@@ -18,7 +18,8 @@ article .date {
     border-radius: 4px;
 }
 
-.img-container p {
+.img-container p,
+.img-container button {
     position: absolute;
     top: 0;
     border-radius: 4px;
@@ -26,6 +27,14 @@ article .date {
     color: white;
     margin: 12px;
     padding: 4px 8px;
+}
+
+.img-container button {
+    right: 0;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .popular-article {

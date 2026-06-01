@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Article } from '../../models/article.models';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Article } from '../models/article.models';
 import { DatePipe, NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './article-thumbnail.component.scss',
 })
 export class ArticleThumbnail {
+
   @Input() article:Article = {
     title: '',
     content: '',
@@ -20,5 +21,12 @@ export class ArticleThumbnail {
     categoryName: '',
     id: 0,
     isLiked: false,
+  }
+
+  @Output() isLikedChange: EventEmitter<boolean> = new EventEmitter<boolean>()
+
+  changeIsLiked() {
+    this.isLikedChange.emit(!this.article.isLiked)
+    console.log(this.article.isLiked)
   }
 }
